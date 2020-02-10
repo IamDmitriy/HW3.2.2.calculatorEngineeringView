@@ -21,4 +21,13 @@
     <string name="btn_zero">0</string>
     <string name="btn_point">.</string>
     <string name="btn_engineering_view">Инженерный вид</string>
+    <string name="txt_inv">Inv</string>
+    <string name="txt_ln">In</string>
+    <string name="txt_sinh">sinh</string>
+    <string name="txt_cosh">cosh</string>
+    <string name="txt_tanh">tanh</string>
+    <string name="txt_exp">exp</string>
+    <string name="txt_left_bracket">(</string>
+    <string name="txt_right_bracket">)</string>
+    <string name="txt_sin">sin</string>
 </resources>
