@@ -6,50 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
         android:id="@+id/txtOutput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="@string/start_output"
         android:textAlignment="viewEnd"
-        android:textSize="@dimen/txt_size"
+        android:textSize="44sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnModeChange"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnModeChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_engineering_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/mainView"
+    <FrameLayout
+        android:id="@+id/mainViewFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/engineeringView"
+        app:layout_constraintBottom_toTopOf="@id/engineeringViewFrame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnModeChange"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/txtOutput">
+
         <include layout="@layout/main_calculator_view" />
 
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/engineeringView"
+        android:id="@+id/engineeringViewFrame"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainView">
+        app:layout_constraintTop_toBottomOf="@id/mainViewFrame">
 
+        <include layout="@layout/engineering_calculator_view" />
 
     </FrameLayout>
 
