@@ -5,9 +5,18 @@
     android:id="@+id/mainView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-
+    <TextView
+        android:id="@+id/txtOutput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:textSize="44sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnChangeMode"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnC"
@@ -19,7 +28,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnSign"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/txtOutput" />
 
     <Button
         android:id="@+id/btnSign"
@@ -73,6 +82,7 @@
         android:id="@+id/btnSeven"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_seven"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toTopOf="@+id/btnFour"
@@ -85,6 +95,7 @@
         android:id="@+id/btnEight"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_eight"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnSeven"
@@ -97,6 +108,7 @@
         android:id="@+id/btnNine"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_nine"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnEight"
@@ -109,6 +121,7 @@
         android:id="@+id/btnFour"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_four"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toTopOf="@+id/btnOne"
@@ -121,6 +134,7 @@
         android:id="@+id/btnFive"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_five"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnFour"
@@ -133,6 +147,7 @@
         android:id="@+id/btnSix"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_six"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnFive"
@@ -146,6 +161,7 @@
         android:id="@+id/btnOne"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_one"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toTopOf="@+id/btnZero"
@@ -158,6 +174,7 @@
         android:id="@+id/btnTwo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_two"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnOne"
@@ -170,6 +187,7 @@
         android:id="@+id/btnThree"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_three"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnTwo"
@@ -219,6 +237,7 @@
         android:id="@+id/btnPoint"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="onClick"
         android:text="@string/btn_point"
         android:textSize="@dimen/txt_size"
         app:layout_constraintBottom_toBottomOf="@+id/btnZero"
@@ -240,6 +259,15 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/btnPoint"
         app:layout_constraintTop_toTopOf="@+id/btnPoint" />
+
+    <Button
+        android:id="@+id/btnChangeMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeMode"
+        android:text="@string/btn_engineering_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtOutput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
