@@ -1,12 +1,14 @@
 package com.example.calculatorengineeringview;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +27,28 @@ public class MainActivity extends AppCompatActivity {
     private Button btnNine;
     private Button btnPoint;
     private TextView txtOutput;
+    private String textBuffer; //TODO скинь в другую задачу
     View.OnClickListener onButtonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Button btn = (Button) v;
-            String txt = btn.getText().toString();
-            txtOutput.setText(txt);
+            String curBtn = btn.getText().toString();
+
+            if (TextUtils.isEmpty(txtOutput.getText())) {
+                textBuffer ="";
+            } else {
+                textBuffer = txtOutput.getText().toString();
+            }
+
+            if (curBtn.equals(getString(R.string.btn_point)) &&
+                    textBuffer.contains(getString(R.string.btn_point))) {
+                Toast.makeText(MainActivity.this,
+                        getString(R.string.error_point_already_exist), Toast.LENGTH_SHORT).show();
+            } else {
+                textBuffer += curBtn;
+            }
+
+            txtOutput.setText(textBuffer);
 
         }
     };

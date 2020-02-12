@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
 
+
     <Button
         android:id="@+id/btnC"
         android:layout_width="0dp"
