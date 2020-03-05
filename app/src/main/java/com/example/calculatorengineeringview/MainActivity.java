@@ -1,5 +1,6 @@
 package com.example.calculatorengineeringview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         txtOutput.setText(textBuffer);
     }
 
-    public void changeMode() { //Ссылка на метод была из макета в кнопку
+    public void changeMode() {
         CharSequence curTxtInOutput;
 
         switch (curCalcView) {
@@ -93,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 changeMode();
                 return true;
             case R.id.settings:
-                //TODO добавить экран настроек
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
         }
 
