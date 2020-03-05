@@ -5,7 +5,8 @@
     android:id="@+id/engineeringView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+
+
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -13,6 +14,7 @@
         layout="@layout/main_calculator_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+
         app:layout_constraintBottom_toTopOf="@id/engineeringViewFrame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +26,6 @@
             android:id="@+id/mainView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
             tools:context=".MainActivity">
 
             <TextView

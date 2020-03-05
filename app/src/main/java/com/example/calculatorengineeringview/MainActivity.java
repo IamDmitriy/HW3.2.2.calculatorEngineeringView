@@ -12,6 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity {
     private ConstraintLayout engineeringView;
+    private ConstraintLayout mainView;
     private CalcView curCalcView = CalcView.MAIN_VIEW;
     private String textBuffer;
     private TextView txtOutput;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         engineeringView = findViewById(R.id.engineeringView);
         engineeringView.setVisibility(View.GONE);
         txtOutput = findViewById(R.id.txtOutput);
+        mainView = findViewById(R.id.mainView);
+
 
     }
 
@@ -55,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         switch (curCalcView) {
             case MAIN_VIEW:
                 curCalcView = CalcView.ENGINEER_VIEW;
+                mainView.setVisibility(View.GONE);
                 engineeringView.setVisibility(View.VISIBLE);
+
                 curTxtInOutput = txtOutput.getText();
                 txtOutput = findViewById(R.id.txtOutputEnView);
                 txtOutput.setText(curTxtInOutput);
@@ -64,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             case ENGINEER_VIEW:
                 curCalcView = CalcView.MAIN_VIEW;
                 engineeringView.setVisibility(View.GONE);
+                mainView.setVisibility(View.VISIBLE);
                 curTxtInOutput = txtOutput.getText();
                 txtOutput = findViewById(R.id.txtOutput);
                 txtOutput.setText(curTxtInOutput);
