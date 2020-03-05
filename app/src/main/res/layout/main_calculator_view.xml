@@ -14,7 +14,7 @@
         android:textAlignment="viewEnd"
         android:textSize="44sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnChangeMode"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -258,14 +258,6 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/btnPoint"
         app:layout_constraintTop_toTopOf="@+id/btnPoint" />
-
-    <Button
-        android:id="@+id/btnChangeMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_engineering_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtOutput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
