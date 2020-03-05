@@ -2,6 +2,8 @@ package com.example.calculatorengineeringview;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClick(View v) {
+    public void onClick(View v) { //TODO больше не работает
         Button btn = (Button) v;
         String curBtn = btn.getText().toString();
 
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         txtOutput.setText(textBuffer);
     }
 
-    public void changeMode(View view) {
+    public void changeMode() { //Ссылка на метод была из макета в кнопку
         CharSequence curTxtInOutput;
 
         switch (curCalcView) {
@@ -75,5 +77,26 @@ public class MainActivity extends AppCompatActivity {
                 txtOutput.setText(curTxtInOutput);
                 break;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_change_mode:
+                changeMode();
+                return true;
+            case R.id.settings:
+                //TODO добавить экран настроек
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

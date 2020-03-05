@@ -3,9 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/actionChangeMode"
+        android:id="@+id/action_change_mode"
         android:orderInCategory="500"
         android:title="@string/btn_engineering_view"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:orderInCategory="0"
+        android:title="@string/settings"
+        app:showAsAction="always" />
 
 </menu>
